@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36705.20 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResilienceProgramming", "ResilienceProgramming\ResilienceProgramming.csproj", "{CC41639F-B93D-4E49-97E5-660C3139DEC9}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Retry", "Retry\Retry.csproj", "{4183F1B0-F939-4BAA-9ACB-83B705E3DD14}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Circuitbreaker", "Circuitbreaker\Circuitbreaker.csproj", "{3AC68DFA-22DD-49DE-B12B-C87917B2AC04}"
@@ -15,10 +13,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{CC41639F-B93D-4E49-97E5-660C3139DEC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CC41639F-B93D-4E49-97E5-660C3139DEC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CC41639F-B93D-4E49-97E5-660C3139DEC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CC41639F-B93D-4E49-97E5-660C3139DEC9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4183F1B0-F939-4BAA-9ACB-83B705E3DD14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4183F1B0-F939-4BAA-9ACB-83B705E3DD14}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4183F1B0-F939-4BAA-9ACB-83B705E3DD14}.Release|Any CPU.ActiveCfg = Release|Any CPU
