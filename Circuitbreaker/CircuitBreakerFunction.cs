@@ -7,7 +7,6 @@ namespace Circuitbreaker;
 
 public class CircuitBreakerFunction
 {
-
     // A static variable to hold the shared state of the circuit breaker
     private static readonly ISyncPolicy circuitBreaker;
     private static int _simulatedFailureCount = 0; // For testing only
@@ -48,7 +47,7 @@ public class CircuitBreakerFunction
             // The circuit breaker determines if the execution is allowed
             circuitBreaker.Execute(() => MakePenzleCall(req));
             message = "Service call succeeded.";
-            response.WriteString(message);
+            response.WriteStringAsync(message);
             response.StatusCode = HttpStatusCode.OK;
         }
         catch (Polly.CircuitBreaker.BrokenCircuitException)
@@ -62,8 +61,9 @@ public class CircuitBreakerFunction
         {
             // Catch any exception thrown by MakePenzleCall that led to the break
             message = $"Service call failed: {ex.Message}";
-            response.WriteString(message);
-            response.StatusCode = HttpStatusCode.InternalServerError;
+            response.WriteStringAsync(message);
+         
+            //response.StatusCode = HttpStatusCode.InternalServerError;
         }
 
         return response;
@@ -80,7 +80,7 @@ public class CircuitBreakerFunction
             _simulatedFailureCount++;
             Console.WriteLine($"Simulated service call failed. Failure count: {_simulatedFailureCount}");
             // A real service call would throw an exception here (e.g., HttpClient exception)
-            throw new Exception($"Simulated external service failure {_simulatedFailureCount}.");
+           // throw new Exception($"Simulated external service failure {_simulatedFailureCount}.");
         }
 
         Console.WriteLine("Simulated service call succeeded (or count reached 4).");
