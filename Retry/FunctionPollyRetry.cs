@@ -37,11 +37,11 @@ public class FunctionPollyRetry
             RetryPolicy.Execute(() =>
             {
                 // Call a non-existent Webservice
-                var client = new RestClient("http://pslice.net/blahblah");
+                // statuscode is 0 , as the domain does not exist (DNS resolution failure)
+                // var client = new RestClient("http://pslice.net/blahblah");
+                var client = new RestClient("https://www.google.com/this-path-does-not-exist-12345");
                 var request = new RestRequest();
                 RestResponse response = client.Execute(request);
-
-                //statuscode is 0 , as the domain does not exist (DNS resolution failure)
 
                 // Force a retry
                 if (httpStatusCodesWorthRetrying.Contains((int)response.StatusCode))
