@@ -23,8 +23,11 @@ public class FunctionPollyRetry
     {
         _logger.LogInformation("C# HTTP trigger function processed a request.");
 
+        //handles the (forced) exception thrown- from the restresponse...
         var RetryPolicy = Policy.Handle<Exception>().WaitAndRetry(3,
+               //instantiate the delay strategy
                attempt => TimeSpan.FromSeconds(0.1 * Math.Pow(2, attempt)),
+               //onRetry delegate : log stuff
                (exception, calculatedWaitDuration) =>
                {
                    _logger.LogError($"exception: {exception.Message}");
