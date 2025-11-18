@@ -11,7 +11,7 @@ public class FunctionPollyRetry
 {
     private readonly ILogger _logger;
 
-    private int[] httpStatusCodesWorthRetrying = {404, 408, 500, 502, 503, 504 };
+    private int[] httpStatusCodesWorthRetrying = {0, 404, 408, 500, 502, 503, 504};
 
     public FunctionPollyRetry(ILoggerFactory loggerFactory)
     {
@@ -36,7 +36,7 @@ public class FunctionPollyRetry
         {
             RetryPolicy.Execute(() =>
             {
-                // Call a Webservice
+                // Call a non-existent Webservice
                 var client = new RestClient("http://pslice.net/blahblah");
                 var request = new RestRequest();
                 RestResponse response = client.Execute(request);
