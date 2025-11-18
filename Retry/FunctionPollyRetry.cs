@@ -11,7 +11,7 @@ public class FunctionPollyRetry
 {
     private readonly ILogger _logger;
 
-    private int[] httpStatusCodesWorthRetrying = {0, 404, 408, 500, 502, 503, 504};
+    private int[] httpStatusCodesWorthRetrying = { 0, 404, 408, 500, 502, 503, 504 };
 
     public FunctionPollyRetry(ILoggerFactory loggerFactory)
     {
@@ -40,6 +40,8 @@ public class FunctionPollyRetry
                 var client = new RestClient("http://pslice.net/blahblah");
                 var request = new RestRequest();
                 RestResponse response = client.Execute(request);
+
+                //statuscode is 0 , as the domain does not exist (DNS resolution failure)
 
                 // Force a retry
                 if (httpStatusCodesWorthRetrying.Contains((int)response.StatusCode))
