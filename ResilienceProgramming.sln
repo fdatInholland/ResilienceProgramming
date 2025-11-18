@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResilienceProgramming", "Re
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Retry", "Retry\Retry.csproj", "{4183F1B0-F939-4BAA-9ACB-83B705E3DD14}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Circuitbreaker", "Circuitbreaker\Circuitbreaker.csproj", "{3AC68DFA-22DD-49DE-B12B-C87917B2AC04}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{4183F1B0-F939-4BAA-9ACB-83B705E3DD14}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4183F1B0-F939-4BAA-9ACB-83B705E3DD14}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4183F1B0-F939-4BAA-9ACB-83B705E3DD14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AC68DFA-22DD-49DE-B12B-C87917B2AC04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AC68DFA-22DD-49DE-B12B-C87917B2AC04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AC68DFA-22DD-49DE-B12B-C87917B2AC04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AC68DFA-22DD-49DE-B12B-C87917B2AC04}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
