@@ -44,7 +44,7 @@ public class FunctionPollyRetry
                 var request = new RestRequest();
                 RestResponse response = client.Execute(request);
 
-                // Force a retry
+                // Force a retry through throwing a new exception
                 if (httpStatusCodesWorthRetrying.Contains((int)response.StatusCode))
                     throw new Exception("http request failed");
 
