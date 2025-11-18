@@ -11,7 +11,8 @@ public class FunctionPollyRetry
 {
     private readonly ILogger _logger;
 
-    private int[] httpStatusCodesWorthRetrying = { 0, 404, 408, 500, 502, 503, 504 };
+    //note the 0 status - for failure DNS resolution
+    private int[] httpStatusCodesWorthRetrying = {0, 404, 408, 500, 502, 503, 504 };
 
     public FunctionPollyRetry(ILoggerFactory loggerFactory)
     {
